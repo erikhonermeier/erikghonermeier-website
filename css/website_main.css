@@ -1,0 +1,174 @@
+.page-wrapper-1,
+.page-wrapper-2 {
+  background-color: lightgray;
+  position: absolute;
+  width: 36%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+.page-wrapper-1::-webkit-scrollbar {
+  display: none;
+}
+
+.page-wrapper-2::-webkit-scrollbar {
+  display: none;
+}
+
+.page-wrapper-1 {
+  left: 28vw;
+}
+
+.page-wrapper-2 {
+  right: 0;
+}
+
+.fig-container-1,
+.fig-container-2 {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+/*  padding: .75rem;*/
+}
+
+.fig-container-1 {
+  padding-right: .375rem;
+  padding-left: .75rem;
+}
+
+.fig-container-2 {
+  padding-right: .75rem;
+  padding-left: .375rem;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  position: relative;
+  margin-bottom: .75rem;
+}
+
+figure a {
+  color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: 0.35s ease-in-out;
+}
+
+figure a:hover {
+  cursor: pointer;
+  background-color: rgb(0, 0, 0, 60%);
+  color: white;
+}
+
+.info-checkbox1 {
+  opacity: 0;
+}
+
+.info-label1 {
+  position: absolute;
+  bottom: 100px;
+  right: 1.25rem;
+  width: 30px;
+  height: 30px;
+  z-index: 3;
+}
+
+.info-label1:hover {
+  cursor: pointer;
+}
+
+.info-wrapper1 label {
+  width: 3rem; 
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ease-in-out;
+}
+
+.info-wrapper1 label::before,
+.info-wrapper1 label::after {
+  background-color: black;
+  content: "";
+  width: 0.1rem; height: 1.5rem;
+  position: absolute;
+  border-radius: 2px;
+  transition: 0.5s ease-in-out;
+}
+
+.info-wrapper1 label::before {
+  transform: rotate(90deg);
+}
+
+.info-wrapper1 label::after {
+  transform: rotate(0deg);
+}
+
+.info-wrapper1 input:checked + label {
+  transform: rotate(360deg);
+}
+
+.info-wrapper1 input:checked + label::before {
+  height: 1.5rem;
+  transform: rotate(-45deg);
+}
+
+.info-wrapper1 input:checked + label::after {
+  height: 1.5rem;
+  transform: rotate(45deg);
+}
+
+.info-wrapper1 {
+  background-color: transparent;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 28vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-top: 1px solid black;
+}
+
+.info-text1 {
+  background-color: transparent;
+  display: flex;
+  text-wrap: wrap;
+  position: fixed;
+  align-items: center;
+  width: 19.5vw;
+  height: 100;
+  bottom: 92px;
+  left: 0;
+  margin-left: .65rem;
+}
+
+.info-wrapper1 .info-text1 {
+  max-height: 0;
+  overflow-y: hidden;
+  color: transparent;
+  transition: 0.5s ease-in-out;
+}
+
+.info-wrapper1 input:checked ~ .info-text1, .info-content1, .info-wrapper1 {
+  max-height: 100vh;
+  color: inherit;
+}
+
